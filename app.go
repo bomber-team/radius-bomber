@@ -1,5 +1,13 @@
 package main
 
+import "gitlab.com/radius-tank/radiusGenerator/parseAttribute"
+
 func main() {
-	$END$
+	parser := parseAttribute.Parser{
+		Path: "examples/scenario1.txt",
+	}
+
+	parser.ReadFromFile()
+
+
 }
