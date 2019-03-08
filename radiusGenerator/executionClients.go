@@ -7,6 +7,7 @@ import (
 )
 
 type ExecutiongClient struct {
+	path string
 }
 
 //return attributes from client script with keys and values todo
@@ -16,8 +17,8 @@ func (ExecutiongClient) getAttributes() []models.Attribute {
 }
 
 
-func (ExecutiongClient) executeScript() {
-	cmd := exec.Command("go run "+path, "")
+func (client ExecutiongClient) executeScript() {
+	cmd := exec.Command("go run "+client.path, "")
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		panic("")

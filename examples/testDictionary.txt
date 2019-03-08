@@ -1,0 +1,11 @@
+VENDOR              RANDOM               12899
+
+BEGIN-VENDOR          RANDOM
+
+ATTRIBUTE Random-attribute-R             150
+ATTRIBUTE Random-attribute-R             150
+ATTRIBUTE Random-attribute-R             150
+ATTRIBUTE Random-attribute-R             150
+ATTRIBUTE Random-attribute-R             150
+
+END-VENDOR RANDOM

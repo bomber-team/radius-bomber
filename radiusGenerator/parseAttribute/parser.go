@@ -105,3 +105,9 @@ func (parser *Parser) checkFormat(s []byte) models.ScenarioAttribute {
 	}
 	return models.ScenarioAttribute{}
 }
+
+func makeAttrbutePacket() {
+	//packet := radius.New(radius.CodeAccessRequest, []byte(`secret`))
+
+	//packet.Add(radius.Type(1), "")
+}
