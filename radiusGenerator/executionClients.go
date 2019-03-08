@@ -1,6 +1,10 @@
-package executionClients
+package radiusGenerator
 
-import "gitlab.com/radius-tank/radiusGenerator/models"
+import (
+	"fmt"
+	"gitlab.com/radius-tank/radiusGenerator/models"
+	"os/exec"
+)
 
 type ExecutiongClient struct {
 }

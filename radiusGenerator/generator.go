@@ -1,4 +1,4 @@
-package executor
+package radiusGenerator
 
 import (
 	"gitlab.com/radius-tank/radiusGenerator/models"
