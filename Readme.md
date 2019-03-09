@@ -1,23 +1,6 @@
-## Version 0.1
-Create packages and structures for all radius tank,
-radius tank includes:
-radius-attacker - module which made attack on server
-
-radius-generator - module which parse attributes, execute clients
-preparation and prepare testData
-
-radius-metric - module which collect metrics from radius-attacker
-
-radius-generator includes:
-parse attribute package,
-execution clients preparation package
-preparation data package
-
-## Version 0.2
-realization parse package of scenarios
-
-## Version 0.3
-realization of radius-generator attributes algorithm
+## Version 0.35
+add extra fields to signify about attributes type, whe it added to packet,
+think about password
 
 ## Version 0.4
 realization connection generator algorithm with userPreparation
