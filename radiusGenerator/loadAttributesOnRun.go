@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+//Global dictionary for easy parse user scenarious
 var Dictionary = map[string]radius.Type{}
 
 //Structure for parse radius attribute on run

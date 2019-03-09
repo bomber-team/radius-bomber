@@ -1,11 +1,7 @@
-VENDOR              RANDOM               12899
-
-BEGIN-VENDOR          RANDOM
-
-ATTRIBUTE Random-attribute-R             150
-ATTRIBUTE Random-attribute-R             150
-ATTRIBUTE Random-attribute-R             150
-ATTRIBUTE Random-attribute-R             150
-ATTRIBUTE Random-attribute-R             150
-
-END-VENDOR RANDOM
+VENDOR Test 32473
+BEGIN-VENDOR Test
+ATTRIBUTE Test-Vendor-Name 5 string
+ATTRIBUTE Test-Vendor-Name1 6 string
+ATTRIBUTE Test-Vendor-Name2 7 string
+ATTRIBUTE Test-Vendor-Name3 8 string
+END-VENDOR Test
