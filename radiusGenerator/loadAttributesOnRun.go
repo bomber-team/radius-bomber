@@ -22,12 +22,11 @@ func (loader Loader) check(e error) {
 	}
 }
 
-//load 'attributes from transfer file to use them on run
-func (loader *Loader) ParseFile() {
+//load 'attributes from transfer file to use them on run todo made normal errors from function
+func (loader *Loader) ParseFile() (err error) {
 	parser := &dictionary.Parser{
 		Opener: &dictionary.FileSystemOpener{},
 	}
-
 	for _, path := range loader.Paths {
 		dict, err := parser.ParseFile(path)
 		if err != nil {
@@ -39,6 +38,7 @@ func (loader *Loader) ParseFile() {
 			loader.addToDictionaryVendorJradius(element)
 		}
 	}
+	return
 }
 
 //load standard attributes to our dictionary

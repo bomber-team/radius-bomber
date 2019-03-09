@@ -12,7 +12,7 @@ type Generator struct {
 }
 
 //Main generate algorithm
-func (generator Generator) generate(limit int) (packets [][]models.Attribute) {
+func (generator Generator) Generate(limit int) (packets [][]models.Attribute) {
 	//parse
 	parser := parseAttribute.Parser{
 		generator.Path,
