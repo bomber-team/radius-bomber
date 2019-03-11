@@ -6,7 +6,7 @@ import (
 )
 
 func TestParse(t *testing.T) {
-	slice := [1] string{"/home/kostya05983/go/src/gitlab.com/radius-tank/testData/testDictionary.txt"}
+	slice := [1] string{"/home/kostya05983/go/src/gitlab.com/radius-tank/attackData/rfc2865.txt"}
 
 	loader := radiusGenerator.Loader{
 		Paths: slice[0:1],

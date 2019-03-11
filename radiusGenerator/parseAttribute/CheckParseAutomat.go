@@ -16,7 +16,6 @@ const (
 	NEWLINE            = byte('\n')
 )
 
-
 const (
 	StartState      = 1
 	TagState        = 2
@@ -48,7 +47,7 @@ func (automat CheckAutomat) checkFormatAndGet(s []byte) (result models.ScenarioA
 			}
 		case TagState:
 			//Move to another function
-			result.Tag = currentBuf
+			result.Tag = []byte(currentBuf)[0]
 			currentBuf = ""
 			switch c {
 			case GenStateKey:

@@ -12,7 +12,6 @@ type ExecutiongClient struct {
 
 //return attributes from client script with keys and values todo
 func (ExecutiongClient) getAttributes() []models.Attribute {
-
 	return []models.Attribute{}
 }
 

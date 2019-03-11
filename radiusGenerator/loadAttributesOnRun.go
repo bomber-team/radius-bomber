@@ -1,6 +1,7 @@
 package radiusGenerator
 
 import (
+	"gitlab.com/radius-tank/radiusGenerator/models"
 	"layeh.com/radius"
 	"layeh.com/radius/dictionary"
 	"log"
@@ -8,7 +9,7 @@ import (
 )
 
 //Global dictionary for easy parse user scenarious
-var Dictionary = map[string]radius.Type{}
+var Dictionary = map[string]models.AttributeParams{}
 
 //Structure for parse radius attribute on run
 type Loader struct {
@@ -32,7 +33,7 @@ func (loader *Loader) ParseFile() (err error) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		loader.addToDictionaryStandartAttributes(dict.Attributes)
+		loader.addToDictionaryStandardAttributes(dict.Attributes)
 		//Add vendors to our memory
 		for _, element := range dict.Vendors {
 			loader.addToDictionaryVendorJradius(element)
@@ -42,13 +43,16 @@ func (loader *Loader) ParseFile() (err error) {
 }
 
 //load standard attributes to our dictionary
-func (loader Loader) addToDictionaryStandartAttributes(attributes []*dictionary.Attribute) {
+func (loader Loader) addToDictionaryStandardAttributes(attributes []*dictionary.Attribute) {
 	for _, attrubute := range attributes {
 		i, err := strconv.Atoi(attrubute.OID.String())
 		if err != nil {
 			panic(err)
 		}
-		Dictionary[attrubute.Name] = radius.Type(i)
+		Dictionary[attrubute.Name] = models.AttributeParams{
+			Type: attrubute.Type,
+			OID:  radius.Type(i),
+		}
 	}
 }
 
@@ -60,6 +64,9 @@ func (loader *Loader) addToDictionaryVendorJradius(dict *dictionary.Vendor) {
 		if err != nil {
 			panic(err)
 		}
-		Dictionary[element.Name] = radius.Type(dict.Number<<16 + i)
+		Dictionary[element.Name] = models.AttributeParams{
+			Type: element.Type,
+			OID:  radius.Type(dict.Number<<16 + i),
+		}
 	}
 }
